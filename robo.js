@@ -58,8 +58,18 @@ function checar_envio_para(message, dono) {
 }
 
 function detectar_frase(message) {
-    if (message.text === "o o o oo") {
-        enviar_mensagem(message, "cadê o isqueiroooo")
+
+    frases = {
+        "o o o oo" : "cadê o isqueiroooo",
+        "quem não tem colírio" : "uuusa óóculos escuroo",
+        "para bizarro" : "Bizarro, por favor, você sabe que você está sendo inconveniente, só para.",
+        "todos nós amamos você alfred" : "Eu também amo vocês galera."
+    }
+
+    var dict_key = message.text.toLowerCase()
+
+    if (frases[dict_key]) {
+        enviar_mensagem(message, frases[dict_key])
     }
 }
 
