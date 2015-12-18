@@ -1,6 +1,6 @@
 var unirest = require('unirest');
 
-var BASE_URL = "https://api.telegram.org/bot156638006:AAGydsQFxVdgjlz4-IIA1f7xRzQQkuAFL0Y/";
+var BASE_URL = "https://api.telegram.org/bot<token>";
 var POLLING_URL = BASE_URL + "getUpdates?offset=:offset:&timeout=60";
 var SEND_MESSAGE_URL = BASE_URL + "sendMessage";
 
