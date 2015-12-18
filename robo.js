@@ -57,7 +57,8 @@ var frases = {
         "obrigado alfred" : "Obrigado você seu lindo.",
         "bom dia alfred" : "Bom dia mestre.",
         "10/10" : "gr8 m8 i r8 8/8",
-        "lei do duende" : "o Marco acende"
+        "lei do duende" : "o Marco acende",
+        "quem é o alfred?" : "Olá, meu nome é Afred, Sou um robô criado por Marco Worms, digite /falas para saber quais frases eu respondo. Caso você queira contribuir no meu desenvolvimento entre aqui https://github.com/MarcoWorms/Alfred/blob/master/robo.js"
 }
 
 var COMMANDS = {
