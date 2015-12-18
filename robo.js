@@ -169,4 +169,4 @@ function enviar_mensagem(message, text) {
         });
 }
 
-poll(922829674);
+poll(0);
