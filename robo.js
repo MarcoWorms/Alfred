@@ -1,6 +1,6 @@
 var unirest = require('unirest');
 
-var BASE_URL = "https://api.telegram.org/bot156638006:AAF7iQ-SUyEudYobM7Ii9zlMJgeqLnn6rRs/";
+var BASE_URL = "https://api.telegram.org/bot<token>/";
 var POLLING_URL = BASE_URL + "getUpdates?offset=:offset:&timeout=60";
 var SEND_MESSAGE_URL = BASE_URL + "sendMessage";
 
@@ -56,7 +56,8 @@ var frases = {
         "todos nós amamos você alfred" : "Eu também amo vocês galera.",
         "obrigado alfred" : "Obrigado você seu lindo.",
         "bom dia alfred" : "Bom dia mestre.",
-        "10/10" : "gr8 m8 i r8 8/8"
+        "10/10" : "gr8 m8 i r8 8/8",
+        "lei do duende" : "o Marco acende"
 }
 
 var COMMANDS = {
@@ -169,4 +170,4 @@ function enviar_mensagem(message, text) {
         });
 }
 
-poll(0);
+poll(922829674);
