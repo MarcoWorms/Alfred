@@ -65,7 +65,8 @@ var frases = {
         "lei do vovo" : "tossiu passou",
         "memes" : "tipos de carinhas são",
         "the game" : "perdi",
-        " kick the baby" : "dont kick the baby",
+        "kick the baby" : "don't kick the baby",
+        "your name is davi" : "My name is Davi and I ride my teeny tiny little bee-cee-clee-ta to school.",
         "quem é o alfred?" : "Olá, meu nome é Alfred, Sou um robô criado por Marco Worms, digite /falas para saber quais frases eu respondo. Caso você queira contribuir no meu desenvolvimento entre aqui https://github.com/MarcoWorms/Alfred/blob/master/robo.js"
 }
 
