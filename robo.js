@@ -5,6 +5,7 @@ var POLLING_URL = BASE_URL + "getUpdates?offset=:offset:&timeout=60";
 var SEND_MESSAGE_URL = BASE_URL + "sendMessage";
 
 var max_offset
+
 function poll(offset) {
 
     var url = POLLING_URL.replace(":offset:", offset);
@@ -33,9 +34,7 @@ function poll(offset) {
                             }
 
                             if (!is_valid_command) {
-                                var dono = message.from.id;
                                 detectar_frase(message)
-                                checar_envio_para(message, dono)
                             }
                         }
                     };
@@ -49,22 +48,20 @@ function poll(offset) {
         });
 };
 
-function checar_envio_para(message, dono) {
-    if (dono == 131702731) {
-        xingar_bizarro(message)
-    } else if (dono == 164614428) {
-        xingar_rodrigo(message)
-    }
-}
-
 var frases = {
         "o o o oo" : "cadê o isqueiroooo",
         "quem não tem colírio" : "uuusa óóculos escuroo",
+        "fuma fuma fuma folha de bananeira" : "fuma na boooaaa sóó de brincadeiraa",
         "para bizarro" : "Bizarro, por favor, você sabe que você está sendo inconveniente, só para.",
         "todos nós amamos você alfred" : "Eu também amo vocês galera.",
         "obrigado alfred" : "Obrigado você seu lindo.",
         "bom dia alfred" : "Bom dia mestre."
-    }
+}
+
+var COMMANDS = {
+    "rolar_dado" : command_rolar_dado,
+    "falas" : command_falas
+};
 
 function detectar_frase(message) {
 
@@ -73,18 +70,48 @@ function detectar_frase(message) {
     if (frases[dict_key]) {
         enviar_mensagem(message, frases[dict_key])
     }
+
+    checar_dono(message)
 }
 
-var COMMANDS = {
-    "rolar_dado" : rolar_dado,
-    "falas" : falas
-};
+function checar_dono(message) {
+    
+    var dono = message.from.id;
+
+    if (dono == 131702731) {
+        var random_1_to_10 = rng(1, 20);
+        if (random_1_to_10 === 1) {
+            enviar_mensagem(message, "Cala a boca bizarro PELO AMOR DE DEUS.")
+        }
+    } else if (dono == 164614428) {
+        var random_1_to_10 = rng(1, 20);
+        if (random_1_to_10 === 1) {
+            enviar_mensagem(message, "ALAHUUU AHKBAAAAAA")
+        }
+    }
+}
 
 function rng(from, to) {
     return Math.floor((Math.random() * to) + from)
 }
 
-function rolar_dado(message, numero) {
+function runCommand(message) {
+    var msgtext = message.text;
+
+    if (msgtext.indexOf("/") != 0) return false;
+
+    var command = msgtext.split("/")[1]
+    var arg = command.split(" ")[1]
+    var raw_command = command.split(" ")[0]
+
+    console.log("Command: " + command)
+    console.log("Args: " + arg)
+    if (COMMANDS[raw_command] == null) return false;
+    COMMANDS[raw_command](message, arg);
+    return true;
+}
+
+function command_rolar_dado(message, numero) {
     if (numero > 1) {
         var random_1_to_number = rng(1, numero);
         enviar_mensagem(message, message.from.first_name + ", Você tirou " + random_1_to_number.toString() + " de " + numero)
@@ -95,7 +122,7 @@ function rolar_dado(message, numero) {
     }
 }
 
-function falas(message, numero) {
+function command_falas(message, numero) {
 
     var output = ''
     for (var property in frases) {
@@ -108,38 +135,6 @@ function falas(message, numero) {
     enviar_mensagem(message, output)
 }
 
-
-function runCommand(message) {
-    var msgtext = message.text;
-
-    if (msgtext.indexOf("/") != 0) return false;
-
-    var command = msgtext.split("/")[1]
-    var arg = command.split(" ")[1]
-    var raw_command = command.split(" ")[0]
-    console.log("Command: " + command)
-    console.log("Args: " + arg)
-    if (COMMANDS[raw_command] == null) return false;
-    COMMANDS[raw_command](message, arg);
-    return true;
-}
-
-function xingar_bizarro(message) {
-    //var caps = message.text.toUpperCase();
-    var random_1_to_10 = rng(1, 10);
-    if (random_1_to_10 === 1) {
-        enviar_mensagem(message, "Cala a boca bizarro PELO AMOR DE DEUS.")
-    }
-
-}
-
-function xingar_rodrigo(message) {
-    //var caps = message.text.toUpperCase();
-    var random_1_to_10 = rng(1, 10);
-    if (random_1_to_10 === 1) {
-        enviar_mensagem(message, "ALAHUUU AHKBAAAAAA")
-    }
-}
 
 function enviar_mensagem(message, text) {
     var answer = {
