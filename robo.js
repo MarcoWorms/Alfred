@@ -1,6 +1,6 @@
 var unirest = require('unirest');
 
-var BASE_URL = "https://api.telegram.org/bot<token>";
+var BASE_URL = "https://api.telegram.org/bot156638006:AAF7iQ-SUyEudYobM7Ii9zlMJgeqLnn6rRs/";
 var POLLING_URL = BASE_URL + "getUpdates?offset=:offset:&timeout=60";
 var SEND_MESSAGE_URL = BASE_URL + "sendMessage";
 
@@ -55,12 +55,14 @@ var frases = {
         "para bizarro" : "Bizarro, por favor, você sabe que você está sendo inconveniente, só para.",
         "todos nós amamos você alfred" : "Eu também amo vocês galera.",
         "obrigado alfred" : "Obrigado você seu lindo.",
-        "bom dia alfred" : "Bom dia mestre."
+        "bom dia alfred" : "Bom dia mestre.",
+        "10/10" : "gr8 m8 i r8 8/8"
 }
 
 var COMMANDS = {
     "rolar_dado" : command_rolar_dado,
-    "falas" : command_falas
+    "falas" : command_falas,
+    "abrir_pack_hearthstone" : command_abrir_pack_hearthstone
 };
 
 function detectar_frase(message) {
@@ -133,6 +135,24 @@ function command_falas(message, numero) {
     //output = output.replace(/:/g, " -->")
 
     enviar_mensagem(message, output)
+}
+
+function command_abrir_pack_hearthstone(message, arg) {
+
+    var cartas = ""
+
+    // for (var i = 4; i >= 0; i--) {
+    //
+    // };
+
+    // Common = 70%
+    // Rare = 21,4%
+    // Epic = 4,28%
+    // Legendary = 1,08%
+    // Gold Common = 1,47%
+    // Gold Rare = 1,37%
+    // Gold Epic = 0,308%
+    // Gold Legendary = 0,111%
 }
 
 
