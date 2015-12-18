@@ -57,9 +57,7 @@ function checar_envio_para(message, dono) {
     }
 }
 
-function detectar_frase(message) {
-
-    frases = {
+var frases = {
         "o o o oo" : "cadê o isqueiroooo",
         "quem não tem colírio" : "uuusa óóculos escuroo",
         "para bizarro" : "Bizarro, por favor, você sabe que você está sendo inconveniente, só para.",
@@ -67,6 +65,8 @@ function detectar_frase(message) {
         "obrigado alfred" : "Obrigado você seu lindo.",
         "bom dia alfred" : "Bom dia mestre."
     }
+
+function detectar_frase(message) {
 
     var dict_key = message.text.toLowerCase()
 
@@ -76,7 +76,8 @@ function detectar_frase(message) {
 }
 
 var COMMANDS = {
-    "rolar_dado" : rolar_dado
+    "rolar_dado" : rolar_dado,
+    "falas" : falas
 };
 
 function rng(from, to) {
@@ -92,6 +93,19 @@ function rolar_dado(message, numero) {
     } else {
         enviar_mensagem(message,  message.from.first_name + ", você esqueceu do número.")
     }
+}
+
+function falas(message, numero) {
+
+    var output = ''
+    for (var property in frases) {
+      output += property + '\n\n';
+    }
+
+    //output = output.replace(/;/g, "\n\n")
+    //output = output.replace(/:/g, " -->")
+
+    enviar_mensagem(message, output)
 }
 
 
