@@ -51,14 +51,18 @@ function poll(offset) {
 var frases = {
         "o o o oo" : "cadê o isqueiroooo",
         "quem não tem colírio" : "uuusa óóculos escuroo",
+        "edai quale que e" : "HAHA FOGO NA BOMBA!",
         "fuma fuma fuma folha de bananeira" : "fuma na boooaaa sóó de brincadeiraa",
+        "que horas?" : "4:20 blaze it faggot",
         "para bizarro" : "Bizarro, por favor, você sabe que você está sendo inconveniente, só para.",
         "todos nós amamos você alfred" : "Eu também amo vocês galera.",
         "obrigado alfred" : "Obrigado você seu lindo.",
         "bom dia alfred" : "Bom dia mestre.",
         "10/10" : "gr8 m8 i r8 8/8",
         "lei do duende" : "o Marco acende",
-        "quem é o alfred?" : "Olá, meu nome é Afred, Sou um robô criado por Marco Worms, digite /falas para saber quais frases eu respondo. Caso você queira contribuir no meu desenvolvimento entre aqui https://github.com/MarcoWorms/Alfred/blob/master/robo.js"
+        "lei do vovo" : "tossiu passou",
+        "memes" : "tipos de carinhas sao",
+        "quem é o alfred?" : "Olá, meu nome é Alfred, Sou um robô criado por Marco Worms, digite /falas para saber quais frases eu respondo. Caso você queira contribuir no meu desenvolvimento entre aqui https://github.com/MarcoWorms/Alfred/blob/master/robo.js"
 }
 
 var COMMANDS = {
