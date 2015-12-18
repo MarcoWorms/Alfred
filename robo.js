@@ -1,6 +1,6 @@
 var unirest = require('unirest');
 
-var BASE_URL = "https://api.telegram.org/bot156638006:AAFAMRlhz-rg-HAvIz12KnGG_34gcZNgdfs/";
+var BASE_URL = "https://api.telegram.org/bot156638006:AAGydsQFxVdgjlz4-IIA1f7xRzQQkuAFL0Y/";
 var POLLING_URL = BASE_URL + "getUpdates?offset=:offset:&timeout=60";
 var SEND_MESSAGE_URL = BASE_URL + "sendMessage";
 
@@ -63,7 +63,9 @@ function detectar_frase(message) {
         "o o o oo" : "cadê o isqueiroooo",
         "quem não tem colírio" : "uuusa óóculos escuroo",
         "para bizarro" : "Bizarro, por favor, você sabe que você está sendo inconveniente, só para.",
-        "todos nós amamos você alfred" : "Eu também amo vocês galera."
+        "todos nós amamos você alfred" : "Eu também amo vocês galera.",
+        "obrigado alfred" : "Obrigado você seu lindo.",
+        "bom dia alfred" : "Bom dia mestre."
     }
 
     var dict_key = message.text.toLowerCase()
@@ -110,7 +112,7 @@ function runCommand(message) {
 
 function xingar_bizarro(message) {
     //var caps = message.text.toUpperCase();
-    var random_1_to_10 = Math.floor((Math.random() * 10) + 1);
+    var random_1_to_10 = rng(1, 10);
     if (random_1_to_10 === 1) {
         enviar_mensagem(message, "Cala a boca bizarro PELO AMOR DE DEUS.")
     }
@@ -119,7 +121,7 @@ function xingar_bizarro(message) {
 
 function xingar_rodrigo(message) {
     //var caps = message.text.toUpperCase();
-    var random_1_to_10 = Math.floor((Math.random() * 10) + 1);
+    var random_1_to_10 = rng(1, 10);
     if (random_1_to_10 === 1) {
         enviar_mensagem(message, "ALAHUUU AHKBAAAAAA")
     }
