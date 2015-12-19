@@ -62,11 +62,12 @@ var frases = {
         "bom dia alfred" : "Bom dia mestre.",
         "10/10" : "gr8 m8 i r8 8/8",
         "lei do duende" : "o Marco acende",
-        "lei do vovo" : "tossiu passou",
+        "lei do vovô" : "tossiu passou",
         "memes" : "tipos de carinhas são",
         "the game" : "perdi",
         "kick the baby" : "don't kick the baby",
         "your name is davi" : "My name is Davi and I ride my teeny tiny little bee-cee-clee-ta to school.",
+        "kappa" : "http://i.imgur.com/cpzYXCI.png",
         "quem é o alfred?" : "Olá, meu nome é Alfred, Sou um robô criado por Marco Worms, digite /falas para saber quais frases eu respondo. Caso você queira contribuir no meu desenvolvimento entre aqui https://github.com/MarcoWorms/Alfred/blob/master/robo.js"
 }
 
